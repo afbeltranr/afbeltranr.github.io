@@ -1,6 +1,6 @@
 const textInput = document.getElementById('textInput')
 const result = document.getElementById('result');
-
+  
 
 
 function btnEncrypt(){
@@ -12,20 +12,22 @@ function btnEncrypt(){
 
 }
 
-function encrypt(encryptedString){
+function encrypt(string){
+
+    let codeMatrix = [['a','f2'],['e','45g1'],['i','13d'],['o','f13'],['u','5gh']]
+
+    string = string.toLowerCase()
     
-    let codeMatrix =  [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o","ober"], ["u","ufat"]]
-    encryptedString = encryptedString.toLowerCase();
+    for(var i = 0; i < codeMatrix.length; i++){
 
-    for(let i = 0; i < codeMatrix.length; i++) {
+        if(string.includes(codeMatrix[i][0])){
 
-        if(encryptedString.includes(codeMatrix[i][0])){
-
-           encryptedString =  encryptedString.replaceAll(codeMatrix[i][0], codeMatrix[i][1])
+            string = string.replaceAll(codeMatrix[i][0],codeMatrix[i][1])
         }
-
-    return encryptedString
     }
+
+    return string;
+
 }
 
 
@@ -38,25 +40,24 @@ function btnDecrypt(){
 
 }
 
-function decrypt(DecryptedString){
-    
-    let codeMatrix =  [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o","ober"], ["u","ufat"]]
-    DecryptedString = DecryptedString.toLowerCase();
+function decrypt(string){
 
-    for(let i = 0; i < codeMatrix.length; i++) {
+    let codeMatrix = [['a','f2'],['e','45g1'],['i','13d'],['o','f13'],['u','5gh']]
 
-        if(DecryptedString.includes(codeMatrix[i][1])){
+    string = string.toLowerCase();
 
-           DecryptedString =  DecryptedString.replaceAll(codeMatrix[i][1], codeMatrix[i][0])
+    for(var i = 0; i < codeMatrix.length; i++){
+
+        if(string.includes(codeMatrix[i][1])){
+
+            string = string.replaceAll(codeMatrix[i][1],codeMatrix[i][0])
         }
 
-    return DecryptedString
     }
+
+    return string
+
 }
-
-
-
-
 
 
 function copy(){

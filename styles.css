@@ -29,7 +29,7 @@ main{
     flex-direction: column;
     margin : 40px auto;
     font-size:3rem;
-    animation: slide-up 1.5s;
+    animation: slide-up 4s;
 
 }
 @keyframes slide-up{
@@ -135,7 +135,7 @@ main{
     border-radius:10px;
     margin-top: 30px;
     width: 410px;
-    align:center;
+    text-align:center;
     height: 60px;
     font-size:2rem;
     background-color: #ECB365;
