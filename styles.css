@@ -4,6 +4,8 @@ body{
     font-family: 'Open Sans', sans-serif;
     font-size:34px;
     font-weight: bold;
+    background: url('./img/bg.jpg');
+    background-size: cover
 }
 
 
@@ -23,7 +25,7 @@ main{
 
 .mainTitle{
 
-    color:#ECB365;
+    color:white;
     display : flex;
     align-items: center;
     flex-direction: column;
@@ -56,14 +58,16 @@ main{
     border-color:transparent;
     width: 410px; 
     height: 480px; 
-    background-color:#041C32;
+    background-color: rgba(255,255,255,0.1);
     font-size: 3rem;
-    color:#ECB365;
+    color:black;
+    border-radius: 10px;
+    backdrop-filter:blur(15px);
    
 
 
 }::placeholder{
-    color:	#ECB365;
+    color:	white;
     font-size:3rem;
     animation : slide-up 1.5s;
 
@@ -81,18 +85,20 @@ main{
     margin: 0 auto;
     margin: 0 0 0 40px;
 
+
     
 }
 
 #result{
 
-    background-color:#04293A;
+    background-color:rgba(255,255,255,0.1);
     border-radius: 10px;
     border-color:transparent;
-    color: #ECB365;
+    color: white;
     width: 410px; 
     height: 480px; 
     font-size: 3rem;
+    backdrop-filter:blur(15px);
 
 }
 
@@ -106,27 +112,28 @@ main{
 }
 
 .encrypt{
-    border-style: solid;
+    border-style: none;
     width:45%;
-    background: #04293A;
-    color:#ECB365;
-    border-color: #ECB365;
+    background: rgba(255,255,255,0.1);
+    color:white;
     border-radius:10px;
     height: 60px;
     font-size:2rem;
     margin: 0 auto;
+    backdrop-filter: blur(15px);
     
 }
 
 .decrypt{
     width:45%;
-    background: #064663;
-    color:#ECB365;
+    background: rgba(255,255,255,0.1);
+    color:white;
     border:none;
     margin: 0 auto;
     border-radius:10px;
     height: 60px;
     font-size:2rem;
+    backdrop-filter: blur(30px);
 
 }
 
@@ -138,9 +145,10 @@ main{
     text-align:center;
     height: 60px;
     font-size:2rem;
-    background-color: #ECB365;
-    color:#04293A;
-    font-weight: bold;
+    background-color:rgba(255,255,255,0.1);
+    color:white;
+
+    backdrop-filter: blur(15px);
 
 }
 
@@ -172,7 +180,7 @@ flex-direction:column;}
 
 .copy{
 
-    margin: 0 0 40px 0;
+    margin: 40px 0 40px 0;
 }
 
 }
