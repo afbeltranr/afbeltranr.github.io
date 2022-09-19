@@ -21,6 +21,7 @@ main{
     height:7 rem;
     display:block;
     overflow-y: hidden;
+    align-items:center
 }
 
 .mainTitle{
