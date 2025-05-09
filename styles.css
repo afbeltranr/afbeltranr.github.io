@@ -1,65 +1,60 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+.site-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.site-header h1 {
+  font-size: 2rem;
+  margin: 0;
 }
 
-.profile-picture {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    margin-bottom: 10px;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
 }
 
-h1 {
-    margin: 0;
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
-main {
-    padding: 20px;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-.banners {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
-.banner {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin: 10px;
-    padding: 20px;
-    width: 30%;
-    text-align: center;
+.card-text {
+  padding: 1rem;
 }
 
-.banner a {
-    text-decoration: none;
-    color: #333;
+.card-text h2 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
-.banner h2 {
-    margin-top: 0;
-    color: #007BFF;
-}
-
-.banner p {
-    margin: 10px 0 0;
-    color: #666;
+.card-text p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
 }

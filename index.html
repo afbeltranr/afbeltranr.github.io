@@ -1,40 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Projects Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f5f5f5;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .card {
+      position: relative;
+      height: 250px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .overlay h2 {
+      color: white;
+      text-align: center;
+      font-size: 1.25rem;
+    }
+    a {
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <img src="img/picture.jpg" alt="profile-picture" class="profile-picture">
-            <h1>Andres Beltran</h1>
+
+  <div class="grid">
+    <!-- Project 1 -->
+    <a href="https://github.com/afbeltranr/ABCBankChurnRate">
+      <div class="card" style="background-image: url('assets/churn.png');">
+        <div class="overlay">
+          <h2>Which ML Algorithm Works Best to Predict Customer Churn?</h2>
         </div>
-    </header>
-    
-    <main>
-        <section class="banners">
-            <div class="banner">
-                <a href="/blog">
-                    <h2>Blog</h2>
-                    <p>Read my latest thoughts and articles</p>
-                </a>
-            </div>
-            <div class="banner">
-                <a href="/data-analytics-projects/index.html">
-                    <h2>Data Analytics Projects</h2>
-                    <p>Explore my projects and case studies</p>
-                </a>
-            </div>
-            <div class="banner">
-                <a href="/encrypter">
-                    <h2>Interactive Website</h2>
-                    <p>Check out my interactive website project</p>
-                </a>
-            </div>
-        </section>
-    </main>
+      </div>
+    </a>
+
+    <!-- Project 2 -->
+    <a href="https://github.com/afbeltranr/TikTok-EDA-Visualization">
+      <div class="card" style="background-image: url('assets/tiktok.png');">
+        <div class="overlay">
+          <h2>TikTok Video Claim vs Opinion Analysis</h2>
+        </div>
+      </div>
+    </a>
+
+    <!-- Project 3 -->
+    <a href="https://github.com/afbeltranr/da-fitibit-fitness-tracker">
+      <div class="card" style="background-image: url('assets/fitbit.png');">
+        <div class="overlay">
+          <h2>FitBit Fitness Tracker Data Analysis</h2>
+        </div>
+      </div>
+    </a>
+
+    <!-- Project 4 -->
+    <a href="https://rpubs.com/afbeltranr/924285">
+      <div class="card" style="background-image: url('assets/baseline.png');">
+        <div class="overlay">
+          <h2>Baseline Correction and Cross-Validation in R for Molecules</h2>
+        </div>
+      </div>
+    </a>
+  </div>
+
 </body>
 </html>
