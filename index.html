@@ -2,120 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Data Projects Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+      display: flex;
+      min-height: 100vh;
     }
-    .grid {
+
+    /* Sidebar styles */
+    .sidebar {
+      width: 200px;
+      background: #1e40af;
+      color: white;
+      padding: 20px;
+      position: fixed;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      transform: translateX(0);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+    }
+
+    .sidebar h2 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile Sidebar Hidden */
+    .sidebar.closed {
+      transform: translateX(-100%);
+    }
+
+    .content {
+      flex-grow: 1;
+      margin-left: 200px;
+      padding: 40px;
+      background: #f9fafb;
+      width: 100%;
+    }
+
+    header {
+      margin-bottom: 40px;
+    }
+
+    .project-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
     }
-    @media (min-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    .card {
-      position: relative;
-      height: 250px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+    .project-banner {
+      height: 200px;
       background-size: cover;
       background-position: center;
-      transition: transform 0.3s ease;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    .card:hover {
-      transform: scale(1.02);
+
+    /* Burger Icon */
+    .burger {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1100;
+      width: 30px;
+      height: 25px;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
     }
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+
+    .burger div {
+      height: 4px;
+      background: #333;
+      border-radius: 2px;
     }
-    .overlay h2 {
-      color: white;
-      text-align: center;
-      font-size: 1.25rem;
+
+    /* Responsive rules */
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        height: 100vh;
+        z-index: 1000;
+        transform: translateX(-100%);
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 80px 20px 40px;
+      }
+
+      .burger {
+        display: flex;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
     }
-    a {
-      text-decoration: none;
-    }
-    .header-img {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #e5e7eb;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-}
   </style>
 </head>
 <body>
-<header style="background: #fff; border-bottom: 1px solid #e5e7eb; padding: 20px;">
-  <div style="max-width: 1000px; margin: 0 auto; display: flex; align-items: center; gap: 20px;">
-    <div style="flex-shrink: 0;">
-      <img src="assets/profile.jpg" alt="Profile photo"
-           style="width: 96px; height: 96px; object-fit: cover; border-radius: 50%; border: 2px solid #ddd;" />
-    </div>
-    <div>
-      <h1 style="margin: 0; font-size: 1.8rem;">Andrés Felipe Beltrán Rodríguez</h1>
-      <p style="margin: 6px 0 0; font-size: 1rem; color: #333; max-width: 800px;">
-        I design and execute data analysis projects that go from raw datasets to executive insights.
-        My work bridges the gap between scientific reasoning and technical implementation — often using Python, R, and SQL.
-      </p>
-    </div>
-  </div>
-</header>
-
-  <div class="grid">
-    <!-- Project 1 -->
-    <a href="https://github.com/afbeltranr/ABCBankChurnRate">
-      <div class="card" style="background-image: url('assets/churn.png');">
-        <div class="overlay">
-          <h2>Which ML Algorithm Works Best to Predict Customer Churn?</h2>
-        </div>
-      </div>
-    </a>
-
-    <!-- Project 2 -->
-    <a href="https://github.com/afbeltranr/TikTok-EDA-Visualization">
-      <div class="card" style="background-image: url('assets/tiktok.png');">
-        <div class="overlay">
-          <h2>TikTok Video Claim vs Opinion Analysis</h2>
-        </div>
-      </div>
-    </a>
-
-    <!-- Project 3 -->
-    <a href="https://github.com/afbeltranr/da-fitibit-fitness-tracker">
-      <div class="card" style="background-image: url('assets/fitbit.png');">
-        <div class="overlay">
-          <h2>FitBit Fitness Tracker Data Analysis</h2>
-        </div>
-      </div>
-    </a>
-
-    <!-- Project 4 -->
-    <a href="https://rpubs.com/afbeltranr/924285">
-      <div class="card" style="background-image: url('assets/baseline.png');">
-        <div class="overlay">
-          <h2>Baseline Correction and Cross-Validation in R for Molecules</h2>
-        </div>
-      </div>
-    </a>
+  <!-- Burger Icon for Mobile -->
+  <div class="burger" onclick="toggleSidebar()">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 
+  <!-- Sidebar -->
+  <aside class="sidebar closed" id="sidebar">
+    <h2>My Portfolio</h2>
+    <a href="#bio" onclick="closeSidebar()">Bio</a>
+    <a href="#goals" onclick="closeSidebar()">Goals</a>
+    <a href="#interests" onclick="closeSidebar()">Interests</a>
+    <a href="#projects" onclick="closeSidebar()">Projects</a>
+  </aside>
+
+  <!-- Main content -->
+  <main class="content">
+    <header>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <img src="assets/profile.jpg" alt="Profile photo"
+             style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;" />
+        <div>
+          <h1>Andrés Felipe Beltrán Rodríguez</h1>
+          <p>
+            I design and execute data analysis projects from raw datasets to executive insights.
+            I bridge scientific reasoning and technical implementation — using Python, R, and SQL.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section id="projects" class="project-grid">
+      <a href="https://github.com/afbeltranr/ABCBankChurnRate"
+         class="project-banner" style="background-image: url('assets/churn.png');"></a>
+      <a href="https://github.com/afbeltranr/TikTok-EDA-Visualization"
+         class="project-banner" style="background-image: url('assets/tiktok.png');"></a>
+      <a href="https://github.com/afbeltranr/da-fitibit-fitness-tracker"
+         class="project-banner" style="background-image: url('assets/fitbit.png');"></a>
+      <a href="https://rpubs.com/afbeltranr/924285"
+         class="project-banner" style="background-image: url('assets/baseline.png');"></a>
+    </section>
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+      sidebar.classList.toggle('closed');
+    }
+    function closeSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      if (window.innerWidth <= 768) {
+        sidebar.classList.remove('open');
+        sidebar.classList.add('closed');
+      }
+    }
+  </script>
 </body>
 </html>
