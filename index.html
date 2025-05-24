@@ -12,16 +12,16 @@
       min-height: 100vh;
     }
 
-    /* Sidebar styles */
+    /* Sidebar */
     .sidebar {
       width: 200px;
       background: #1e40af;
       color: white;
       padding: 20px;
       position: fixed;
-      height: 100vh;
       top: 0;
       left: 0;
+      height: 100vh;
       transform: translateX(0);
       transition: transform 0.3s ease-in-out;
       z-index: 1000;
@@ -37,13 +37,13 @@
       color: white;
       text-decoration: none;
       margin: 10px 0;
+      font-weight: bold;
     }
 
     .sidebar a:hover {
       text-decoration: underline;
     }
 
-    /* Mobile Sidebar Hidden */
     .sidebar.closed {
       transform: translateX(-100%);
     }
@@ -62,16 +62,36 @@
 
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
 
     .project-banner {
+      position: relative;
       height: 200px;
       background-size: cover;
       background-position: center;
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+    }
+
+    .project-banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.6) 100%);
+    }
+
+    .project-title {
+      position: absolute;
+      bottom: 10px;
+      left: 15px;
+      color: white;
+      font-weight: bold;
+      z-index: 2;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
     }
 
     /* Burger Icon */
@@ -94,13 +114,14 @@
       border-radius: 2px;
     }
 
-    /* Responsive rules */
+    /* Responsive */
     @media (max-width: 768px) {
       .sidebar {
-        position: fixed;
-        height: 100vh;
-        z-index: 1000;
         transform: translateX(-100%);
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
       }
 
       .content {
@@ -111,15 +132,12 @@
       .burger {
         display: flex;
       }
-
-      .sidebar.open {
-        transform: translateX(0);
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Burger Icon for Mobile -->
+
+  <!-- Burger Icon -->
   <div class="burger" onclick="toggleSidebar()">
     <div></div>
     <div></div>
@@ -132,7 +150,7 @@
     <a href="#bio" onclick="closeSidebar()">Bio</a>
     <a href="#goals" onclick="closeSidebar()">Goals</a>
     <a href="#interests" onclick="closeSidebar()">Interests</a>
-    <a href="#projects" onclick="closeSidebar()">Projects</a>
+    <a href="#projects" onclick="closeSidebar()">Work</a>
   </aside>
 
   <!-- Main content -->
@@ -151,25 +169,49 @@
       </div>
     </header>
 
-    <section id="projects" class="project-grid">
-      <a href="https://github.com/afbeltranr/ABCBankChurnRate"
-         class="project-banner" style="background-image: url('assets/churn.png');"></a>
-      <a href="https://github.com/afbeltranr/TikTok-EDA-Visualization"
-         class="project-banner" style="background-image: url('assets/tiktok.png');"></a>
-      <a href="https://github.com/afbeltranr/da-fitibit-fitness-tracker"
-         class="project-banner" style="background-image: url('assets/fitbit.png');"></a>
-      <a href="https://rpubs.com/afbeltranr/924285"
-         class="project-banner" style="background-image: url('assets/baseline.png');"></a>
+    <!-- Section Anchors -->
+    <section id="bio">
+      <h2>Bio</h2>
+      <p>Brief biography or introduction goes here.</p>
+    </section>
+
+    <section id="goals">
+      <h2>Goals</h2>
+      <p>List of professional or learning goals.</p>
+    </section>
+
+    <section id="interests">
+      <h2>Interests</h2>
+      <p>Your areas of interest or focus within data science, business, or research.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Work</h2>
+      <div class="project-grid">
+        <a href="https://github.com/afbeltranr/ABCBankChurnRate" class="project-banner" style="background-image: url('assets/churn.png');">
+          <div class="project-title">Bank Churn Rate</div>
+        </a>
+        <a href="https://github.com/afbeltranr/TikTok-EDA-Visualization" class="project-banner" style="background-image: url('assets/tiktok.png');">
+          <div class="project-title">TikTok EDA</div>
+        </a>
+        <a href="https://github.com/afbeltranr/da-fitibit-fitness-tracker" class="project-banner" style="background-image: url('assets/fitbit.png');">
+          <div class="project-title">Fitbit Tracker</div>
+        </a>
+        <a href="https://rpubs.com/afbeltranr/924285" class="project-banner" style="background-image: url('assets/baseline.png');">
+          <div class="project-title">Baseline Analysis</div>
+        </a>
+      </div>
     </section>
   </main>
 
-  <!-- JavaScript -->
+  <!-- JS -->
   <script>
     function toggleSidebar() {
       const sidebar = document.getElementById('sidebar');
       sidebar.classList.toggle('open');
       sidebar.classList.toggle('closed');
     }
+
     function closeSidebar() {
       const sidebar = document.getElementById('sidebar');
       if (window.innerWidth <= 768) {
