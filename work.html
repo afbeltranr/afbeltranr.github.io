@@ -7,39 +7,55 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Work</h1>
-      <p>Highlighted data projects with interactive dashboards and executive summaries.</p>
-    </header>
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="assets/profile.jpg" alt="Profile photo" class="profile-pic" />
+        <h2>Andrés Felipe</h2>
+        <p class="bio">Data Analyst | Chemist | Python & R Enthusiast</p>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="work.html" class="nav-link active">Work</a>
+        <a href="bio.html" class="nav-link">Bio</a>
+        <a href="goals.html" class="nav-link">Goals</a>
+        <a href="interests.html" class="nav-link">Interests</a>
+      </nav>
+    </aside>
 
-    <div class="projects-grid">
+    <!-- Main content -->
+    <main class="main-content">
+      <header>
+        <h1>Work</h1>
+        <p>Highlighted data projects showcasing EDA, ML, and insights.</p>
+      </header>
 
-      <!-- Project 1 -->
-      <a href="https://github.com/afbeltranr/ABCBankChurnRate" class="banner">
-        <img src="assets/churn.png" alt="Customer churn prediction using ML and EDA">
-        <div class="banner-text">Customer Churn</div>
-      </a>
+      <div class="projects-grid">
 
-      <!-- Project 2 -->
-      <a href="https://github.com/afbeltranr/TikTokEDA" class="banner">
-        <img src="assets/tiktok.png" alt="TikTok engagement patterns exploratory analysis">
-        <div class="banner-text">TikTok EDA</div>
-      </a>
+        <a href="https://github.com/afbeltranr/ABCBankChurnRate" class="banner">
+          <img src="assets/churn.png" alt="Customer churn project">
+          <div class="banner-text">Customer Churn</div>
+        </a>
 
-      <!-- Project 3 -->
-      <a href="https://github.com/afbeltranr/FitbitEDA" class="banner">
-        <img src="assets/fitbit.png" alt="Fitbit tracker data analytics and visualization">
-        <div class="banner-text">Fitbit Tracker</div>
-      </a>
+        <a href="https://github.com/afbeltranr/TikTok-EDA-Visualization" class="banner">
+          <img src="assets/tiktok.png" alt="TikTok data analysis">
+          <div class="banner-text">TikTok EDA</div>
+        </a>
 
-      <!-- Project 4 -->
-      <a href="https://github.com/afbeltranr/BaselineAnalysis" class="banner">
-        <img src="assets/baseline.png" alt="Baseline analysis for feature selection strategies">
-        <div class="banner-text">Baseline Analysis</div>
-      </a>
+        <a href="https://github.com/afbeltranr/da-fitibit-fitness-tracker" class="banner">
+          <img src="assets/fitbit.png" alt="Fitbit fitness tracker project">
+          <div class="banner-text">Fitbit Tracker</div>
+        </a>
 
-    </div>
+        <a href="https://rpubs.com/afbeltranr/924285" class="banner">
+          <img src="assets/baseline.png" alt="Baseline correction and ML validation">
+          <div class="banner-text">Baseline Analysis</div>
+        </a>
+
+      </div>
+    </main>
+
   </div>
 </body>
 </html>
