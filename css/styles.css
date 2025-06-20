@@ -80,41 +80,73 @@ body {
 }
 
 .project-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  background-size: cover;
-  background-position: center;
-  height: 160px;
-  text-decoration: none;
-  color: white;
   display: flex;
-  align-items: end;
-  padding: 1rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 .project-card:hover {
   transform: scale(1.02);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
-.project-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-}
-
-.project-card span {
+/* Image portion */
+.project-image {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
   position: relative;
+}
+
+.project-title {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
   background: rgba(0, 0, 0, 0.6);
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
+  color: white;
   border-radius: 6px;
   font-weight: bold;
   font-size: 1rem;
-  z-index: 1;
+}
+
+/* Description below image */
+.project-description {
+  padding: 1rem;
+}
+
+.project-description h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.project-description p {
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+/* Tags */
+.project-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #2563eb;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
 }
 
 /* === (Upcoming) Tag Style – Static for now === */
