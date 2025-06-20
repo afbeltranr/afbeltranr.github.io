@@ -1,20 +1,26 @@
-/* Reset & basics */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+/* === Reset & Base Styles === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: Arial, sans-serif;
   display: flex;
   min-height: 100vh;
   background: #f9fafb;
-  color: #1f2937;  /* dark gray */
+  color: #1f2937;
 }
 
-/* Sidebar */
+/* === Sidebar === */
 .sidebar {
   width: 220px;
   background: #ffffff;
   padding: 2rem 1rem;
-  box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
   position: fixed;
   height: 100vh;
   overflow-y: auto;
@@ -22,7 +28,8 @@ body {
 .sidebar img {
   display: block;
   margin: 0 auto 1rem;
-  width: 96px; height: 96px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #e5e7eb;
@@ -43,22 +50,20 @@ body {
   display: block;
   font-size: 1rem;
   font-weight: bold;
-  color: #1f2937;        /* same as body text */
+  color: #1f2937;
   padding: 0.5rem 0;
   text-decoration: none;
 }
 .sidebar nav a:hover {
-  color: #2563eb;        /* subtle blue on hover */
+  color: #2563eb;
 }
 
-/* Content area */
+/* === Main Content Area === */
 .content {
   margin-left: 220px;
   padding: 2rem;
   flex: 1;
 }
-
-/* Section titles */
 .content h2 {
   font-size: 1.75rem;
   margin-bottom: 0.75rem;
@@ -66,39 +71,7 @@ body {
   padding-bottom: 0.25rem;
 }
 
-/* Project grid (in work.html) */
-.project-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-.project-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  background-size: cover;
-  background-position: center;
-  height: 160px;
-  transition: transform 0.2s ease;
-}
-.project-card:hover {
-  transform: translateY(-4px);
-}
-.project-card::after {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-}
-.project-card span {
-  position: absolute;
-  bottom: 0.75rem;
-  left: 0.75rem;
-  color: white;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-}
-
+/* === Project Grid (Work & Certifications) === */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -108,18 +81,18 @@ body {
 
 .project-card {
   position: relative;
+  overflow: hidden;
+  border-radius: 12px;
   background-size: cover;
   background-position: center;
-  border-radius: 12px;
   height: 160px;
-  overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
   color: white;
   display: flex;
   align-items: end;
   padding: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -127,10 +100,34 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
 .project-card span {
+  position: relative;
   background: rgba(0, 0, 0, 0.6);
   padding: 0.5rem 1rem;
   border-radius: 6px;
   font-weight: bold;
   font-size: 1rem;
+  z-index: 1;
+}
+
+/* === (Upcoming) Tag Style – Static for now === */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.tag {
+  background-color: #007b83;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
 }
