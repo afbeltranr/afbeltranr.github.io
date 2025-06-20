@@ -133,3 +133,10 @@ body {
 .project-description {
   text-decoration: none;
 }
+.project-content a,
+.project-content a:visited,
+.project-content a:active {
+  color: #1f2937;      /* black-ish */
+  font-weight: bold;
+  text-decoration: none;
+}
